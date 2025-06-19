@@ -1,0 +1,56 @@
+[
+  {
+    "type": "Turtles",
+    "species": [
+      { "name": "Green Sea Turtle", "icon": "🐢" },
+      { "name": "Loggerhead Turtle", "icon": "🐢" },
+      { "name": "Hawksbill Turtle", "icon": "🐢" }
+    ]
+  },
+  {
+    "type": "Dolphins",
+    "species": [
+      { "name": "Bottlenose Dolphin", "icon": "🐬" },
+      { "name": "Spinner Dolphin", "icon": "🐬" },
+      { "name": "Common Dolphin", "icon": "🐬" }
+    ]
+  },
+  {
+    "type": "Sharks",
+    "species": [
+      { "name": "Great White Shark", "icon": "🦈" },
+      { "name": "Hammerhead Shark", "icon": "🦈" },
+      { "name": "Tiger Shark", "icon": "🦈" }
+    ]
+  },
+  {
+    "type": "Whales",
+    "species": [
+      { "name": "Humpback Whale", "icon": "🐋" },
+      { "name": "Blue Whale", "icon": "🐋" },
+      { "name": "Sperm Whale", "icon": "🐋" }
+    ]
+  },
+  {
+    "type": "Rays",
+    "species": [
+      { "name": "Manta Ray", "icon": "🎏" },
+      { "name": "Spotted Eagle Ray", "icon": "🎏" },
+      { "name": "Stingray", "icon": "🎏" }
+    ]
+  },
+  {
+    "type": "Fish",
+    "species": [
+      { "name": "Clownfish", "icon": "🐠" },
+      { "name": "Parrotfish", "icon": "🐟" },
+      { "name": "Lionfish", "icon": "🐡" }
+    ]
+  },
+  {
+    "type": "Other",
+    "species": [
+      { "name": "Moray Eel", "icon": "🐍" }
+    ]
+  }
+]
