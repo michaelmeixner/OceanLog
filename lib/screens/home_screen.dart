@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'log_sighting_screen.dart';
 import 'map_view_screen.dart';
+import 'view_sightings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,6 +24,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                 );
               },
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const ViewSightingsScreen()),
+              );
+            }, child: const Text('View Saved Sightings')
             ),
             const SizedBox(height: 16),
             ElevatedButton(
