@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oceanlog/database/sighting_database.dart';
 import 'package:oceanlog/models/sighting.dart';
+import 'package:intl/intl.dart';
 
 class ViewSightingsScreen extends StatefulWidget {
   const ViewSightingsScreen({Key? key}) : super(key: key);
@@ -37,10 +38,13 @@ class _ViewSightingsScreenState extends State<ViewSightingsScreen> {
               itemCount: sightings.length,
               itemBuilder: (context, index) {
                 final sighting = sightings[index];
+                final formattedDate = DateFormat(
+                  'MMM d, yyyy - h:mm a',
+                ).format(sighting.timestamp);
                 return ListTile(
                   title: Text(sighting.species.join(', ')),
                   subtitle: Text(
-                    '${sighting.timestamp.toLocal()}\n${sighting.locationName ?? "No location"}',
+                    '$formattedDate\n${sighting.locationName ?? "No location"}',
                   ),
                   isThreeLine: true,
                 );
