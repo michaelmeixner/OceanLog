@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import '../widgets/species_selector.dart';
+import '../models/sighting.dart';
+import '../database/sighting_database.dart';
+
+
 
 class LogSightingScreen extends StatefulWidget {
   const LogSightingScreen({super.key});
@@ -213,12 +217,31 @@ class _LogSightingScreenState extends State<LogSightingScreen> {
             const SizedBox(height: 24),
 
             ElevatedButton(
-              onPressed: () {
-                // Save logic here (mock)
+              onPressed: () async {
+                if (selectedSpecies == null) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Please select a species.')),
+                  );
+                  return;
+                }
+
+                final Sighting sighting = Sighting(
+                  species: [selectedSpecies!],
+                  timestamp: DateTime.now(),
+                  locationName: locationName,
+                  latitude: latitude,
+                  longitude: longitude,
+                  depth: depth,
+                  waterTemp: waterTemp,
+                  visibility: visibility,
+                  behavior: behavior,
+                  notes: notes,
+                );
+
+                await SightingDatabase.instance.insertSighting(sighting);
+
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Saved sighting at $latitude, $longitude'),
-                  ),
+                  const SnackBar(content: Text('Sighting saved to database!')),
                 );
               },
               child: const Text('Save Sighting'),
